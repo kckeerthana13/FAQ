@@ -5,7 +5,7 @@ require 'byebug'
 class SimilarityMatrix
   def self.get_stored_corpus
     corpus = Corpus.new
-    col_data = ReadingFromCsv.get_array_of_qa 
+    col_data = ReadingFromCsv.get_array_of_qa("faq1.csv")
     col_data.each do |headline|
       # create a document object from the headline
       document = Document.new(:content => headline)

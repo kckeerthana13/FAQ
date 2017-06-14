@@ -5,7 +5,7 @@ class FindAnswers
   def self.similarity_hash(question)
     similarity_matrix = SimilarityMatrix.get_similarity_matrix(question)
     documents = SimilarityMatrix.get_document_obj_from_corpus(question)
-    col_data = ReadingFromCsv.get_array_of_qa
+    col_data = ReadingFromCsv.get_array_of_qa("faq1.csv")
     in_index = documents.size-1
     sim_hash = Hash.new
     documents.each_with_index do |doc1, index1|
@@ -25,7 +25,7 @@ class FindAnswers
   def self.print_qa(question)
     v = self.get_answers(question)
     documents = SimilarityMatrix.get_document_obj_from_corpus(question)
-    col_data = ReadingFromCsv.get_array_of_qa
+    col_data = ReadingFromCsv.get_array_of_qa("faq1.csv")
     in_index = documents.size-1
     i = 1
     relevant_answers = Hash.new
